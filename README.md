@@ -1,6 +1,7 @@
 # cra-template-atolye15
 
 This is Atölye15 react app template for [Create React App](https://github.com/facebook/create-react-app).
+This template based from [cra-template-typescipt](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) and [Atölye15 CRA Recipe](https://github.com/atolye15/cra-recipe)
 
 To use this template, add `--template atolye15` when creating a new app.
 
