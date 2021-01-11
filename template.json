@@ -12,13 +12,17 @@
       "web-vitals": "^1.0.1"
     },
     "devDependencies": {
+      "@atolye15/eslint-config": "^1.2.0",
       "prettier": "^2.2.1"
     },
     "eslintConfig": {
-      "extends": ["react-app", "react-app/jest"]
+      "extends": ["react-app", "react-app/jest", "@atolye15/eslint-config"]
     },
     "scripts": {
-      "format:ts": "prettier --write 'src/**/*.{ts,tsx}'",
+      "lint": "yarn run lint:ts",
+      "lint:ts": "tsc && yarn lint:eslint",
+      "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
+      "format:ts": "prettier --write 'src/**/*.{ts,tsx}' && yarn lint:eslint --fix",
       "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
       "format": "yarn run format:ts"
     }
