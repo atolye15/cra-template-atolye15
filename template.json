@@ -11,8 +11,16 @@
       "typescript": "^4.1.2",
       "web-vitals": "^1.0.1"
     },
+    "devDependencies": {
+      "prettier": "^2.2.1"
+    },
     "eslintConfig": {
       "extends": ["react-app", "react-app/jest"]
+    },
+    "scripts": {
+      "format:ts": "prettier --write 'src/**/*.{ts,tsx}'",
+      "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
+      "format": "yarn run format:ts"
     }
   }
 }
