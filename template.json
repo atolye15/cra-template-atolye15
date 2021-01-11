@@ -13,19 +13,23 @@
       "web-vitals": "^1.0.1"
     },
     "devDependencies": {
-      "@atolye15/eslint-config": "^1.2.0",
-      "prettier": "^2.2.1"
+      "prettier": "^2.2.1",
+      "stylelint": "^13.8.0",
+      "stylelint-config-prettier": "^8.0.2",
+      "stylelint-prettier": "^1.1.2"
     },
     "eslintConfig": {
-      "extends": ["react-app", "react-app/jest", "@atolye15/eslint-config"]
+      "extends": ["react-app", "react-app/jest"]
     },
     "scripts": {
-      "lint": "yarn run lint:ts",
+      "lint": "yarn run lint:ts && yarn run lint:css",
       "lint:ts": "tsc && yarn lint:eslint",
+      "lint:css": "stylelint --syntax scss \"src/**/*.scss\"",
       "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
       "format:ts": "prettier --write 'src/**/*.{ts,tsx}' && yarn lint:eslint --fix",
       "format:check": "prettier -c 'src/**/*.{ts,tsx}'",
-      "format": "yarn run format:ts"
+      "format:css": "stylelint --fix --syntax scss \"src/**/*.scss\"",
+      "format": "yarn run format:ts && yarn run format:css"
     }
   }
 }
